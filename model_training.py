@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import os
 import chess
 import numpy as np
@@ -13,7 +7,6 @@ from keras.layers import Conv2D, MaxPooling2D, Flatten, BatchNormalization, Dens
 from keras import callbacks
 from tensorflow.keras.models import model_from_json
 
-# Load dataset
 csv = pd.read_csv('fen_analysis.csv')
 fens = csv['FEN'].values
 evaluations = csv['Evaluation'].values
@@ -109,6 +102,7 @@ early_stopping_cb = callbacks.EarlyStopping(
 
 # Train the model
 print("Training network...")
+
 model.fit(
     X_train, y_train,
     epochs=100,
